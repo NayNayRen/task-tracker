@@ -11,13 +11,11 @@ export default {
 }
 </script>
 
+<!-- Multiple ways to add styles, a global style sheet, entire style list below, or broken up into component style sheets -->
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  box-sizing: border-box;
 }
 </style>
