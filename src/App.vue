@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header />
+    <Header title="Task Tracker" />
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 };
 </script>
 
-<!-- Multiple ways to add styles, a global style sheet, entire style list below, or broken up into component style sheets -->
+<!-- Multiple ways to add styles, a global style sheet, entire inline style list below, or broken up into component specific style sheets -->
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
