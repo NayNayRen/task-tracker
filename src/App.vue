@@ -1,37 +1,38 @@
 <template>
   <div class="container">
-    <h1>Hello World</h1>
+    <Header />
   </div>
 </template>
 
 <script>
-
+import Header from "./components/Header";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-  }
-}
+    Header,
+  },
+};
 </script>
 
 <!-- Multiple ways to add styles, a global style sheet, entire style list below, or broken up into component style sheets -->
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body{
-  font-family: 'Poppins', sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-.btn{
+.btn {
   background-color: #000;
   border-radius: 5px;
   border: none;
-  color:#fff;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
@@ -41,21 +42,21 @@ body{
   text-decoration: none;
 }
 
-.btn:active{
+.btn:active {
   -webkit-transform: scale(0.98);
   transform: scale(0.98);
 }
 
-.btn:focus{
+.btn:focus {
   outline: none;
 }
 
-.btn-block{
+.btn-block {
   display: block;
   width: 100%;
 }
 
-.container{
+.container {
   max-width: 500px;
   margin: 30px auto;
   overflow: auto;
