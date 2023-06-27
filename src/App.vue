@@ -1,5 +1,7 @@
 <template>
-  <h1>Hello World</h1>
+  <div class="container">
+    <h1>Hello World</h1>
+  </div>
 </template>
 
 <script>
@@ -17,5 +19,49 @@ export default {
 
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn{
+  background-color: #000;
+  border-radius: 5px;
+  border: none;
+  color:#fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 15px;
+  margin: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.btn:active{
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
+.btn:focus{
+  outline: none;
+}
+
+.btn-block{
+  display: block;
+  width: 100%;
+}
+
+.container{
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
 }
 </style>
