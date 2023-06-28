@@ -14,7 +14,7 @@ export default {
 };
 </script>
 
-<!-- Multiple ways to add styles, a global style sheet, entire inline style list below, or broken up into component specific style sheets -->
+<!-- Multiple ways to add styles, a global style sheet, in-file style list below, or scoped for a specific component -->
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
