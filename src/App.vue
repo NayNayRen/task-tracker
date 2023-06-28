@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- title prop from Header.vue -->
     <Header title="Task Tracker" />
   </div>
 </template>

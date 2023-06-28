@@ -2,15 +2,21 @@
   <header>
     <!-- prop from below -->
     <h1>{{ title }}</h1>
+    <!-- text and color props from Button.vue -->
+    <Button text="Add Task" color="green" />
   </header>
 </template>
 
 <script>
+import Button from "./Button.vue";
 export default {
   // name used to import into App.vue
   name: "Header",
   props: {
     title: String,
+  },
+  components: {
+    Button,
   },
 };
 </script>
