@@ -19,6 +19,7 @@ export default {
     };
   },
   // created will run when the page loads
+  // usually reserved for api and http requests
   created() {
     this.tasks = [
       {
