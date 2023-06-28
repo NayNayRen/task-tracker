@@ -14,3 +14,8 @@ export default {
 </script>
 
 <style scoped></style>
+<!-- good practice to break down the UI into indivdual pieces -->
+<!-- takes a single task as a prop and the type is an Object -->
+<!-- import into Tasks.vue and register it as a component -->
+<!-- you now have access to each solo task -->
+<!-- add new component to Tasks.vue -->

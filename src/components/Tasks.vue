@@ -22,3 +22,5 @@ export default {
 <!-- coded opposite a php foreach, here singular comes first -->
 <!-- if a warning for the v-for saying a unique id is needed, v-bind the id as the key(:key="task.id") -->
 <!-- i got no warning but added it anyway -->
+<!-- add the new Task component to the v-for div -->
+<!-- v-bind the task prop from Task.vue to the task from the v-for -->
