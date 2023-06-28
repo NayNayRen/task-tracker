@@ -3,7 +3,7 @@
     <!-- title prop from Header.vue -->
     <Header title="Task Tracker" />
     <!-- tasks prop from Tasks.vue bound to tasks array -->
-    <Tasks :tasks="tasks" />
+    <Tasks @delete-task="deleteTask" :tasks="tasks" />
   </div>
 </template>
 
@@ -16,6 +16,17 @@ export default {
   components: {
     Header,
     Tasks,
+  },
+  methods: {
+    deleteTask(id) {
+      // console.log(id);
+      // this.tasks filters each task
+      // where  task.id is not not equal to id being passed, give all data back BUT that one
+      // confirm is an alert box in Vue.js
+      if (confirm("Are you sure?")) {
+        this.tasks = this.tasks.filter((task) => task.id !== id);
+      }
+    },
   },
   // data function that returns an object
   data() {
@@ -49,6 +60,12 @@ export default {
   },
 };
 </script>
+<!-- ADDED EMIT EVENT step 3, step 1 is in Task.vue-->
+<!-- add the @delete-task event to Tasks component -->
+<!-- the value of @delete-task is the same as the name used in $emit() in Task.vue -->
+<!-- if you get an emits events listeners warning, register emits object in Tasks.vue with the event being emitted(delete-task) -->
+<!-- add the methods object, and define the deleteTask() function -->
+<!-- don't push directly onto the array, filter and make a new one -->
 
 <!-- Multiple ways to add styles, a global style sheet, in-file style list below, or scoped for a specific component -->
 <style>
