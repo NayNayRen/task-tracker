@@ -8,6 +8,7 @@
 <script>
 export default {
   name: "Button",
+  //   props value is set in Header.vue
   props: {
     text: String,
     color: String,

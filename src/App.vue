@@ -12,6 +12,35 @@ export default {
   components: {
     Header,
   },
+  // data function that returns an object
+  data() {
+    return {
+      tasks: [],
+    };
+  },
+  // created will run when the page loads
+  created() {
+    this.tasks = [
+      {
+        id: 1,
+        text: "Doctor Appointment",
+        day: "March 1st at 2:30pm",
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: "Meeting at school",
+        day: "July 10th 12:30pm",
+        reminder: true,
+      },
+      {
+        id: 3,
+        text: "Get groceries",
+        day: "Sunday at 11am",
+        reminder: false,
+      },
+    ];
+  },
 };
 </script>
 
