@@ -2,15 +2,20 @@
   <div class="container">
     <!-- title prop from Header.vue -->
     <Header title="Task Tracker" />
+    <!-- tasks prop from Tasks.vue bound to tasks array -->
+    <Tasks :tasks="tasks" />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
+import Tasks from "./components/Tasks";
+
 export default {
   name: "App",
   components: {
     Header,
+    Tasks,
   },
   // data function that returns an object
   data() {

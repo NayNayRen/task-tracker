@@ -7,8 +7,9 @@
 
 <script>
 export default {
+  // name used to import into Header.vue
   name: "Button",
-  //   props value is set in Header.vue
+  // props value is set in Header.vue
   props: {
     text: String,
     color: String,

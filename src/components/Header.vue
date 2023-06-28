@@ -9,9 +9,11 @@
 
 <script>
 import Button from "./Button.vue";
+
 export default {
   // name used to import into App.vue
   name: "Header",
+  // props value is set in App.vue
   props: {
     title: String,
   },
