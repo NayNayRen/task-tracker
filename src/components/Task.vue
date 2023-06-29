@@ -64,7 +64,7 @@ export default {
 <!-- you now have access to each solo task -->
 <!-- add new component to Tasks.vue -->
 
-<!-- ADDED EMIT EVENT step 1, step 2 in Tasks.vue-->
+<!-- ADDED EMIT EVENT step 1, step 2 in Tasks.vue -->
 <!-- add the @click event to fa icon element -->
 <!-- named onDelete(), pass it the task.id as a parameter -->
 <!-- define a methods object, add the onDelete() function, pass it the id parameter -->

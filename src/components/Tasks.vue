@@ -28,7 +28,7 @@ export default {
 <!-- add the new Task component to the v-for div -->
 <!-- v-bind the task prop from Task.vue to the task from the v-for -->
 
-<!-- ADDED EMIT EVENT step 2, step 3 in App.vue-->
+<!-- ADDED EMIT EVENT step 2, step 3 in App.vue -->
 <!-- add the @delete-task event to Task component -->
 <!-- @delete-task is the same name set in this.$emit() in Task.vue -->
 <!-- $emit() is used to catch this.$emit() from Task.vue -->

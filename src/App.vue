@@ -61,7 +61,7 @@ export default {
   },
 };
 </script>
-<!-- ADDED EMIT EVENT step 3, step 1 is in Task.vue-->
+<!-- ADDED EMIT EVENT step 3, step 1 is in Task.vue -->
 <!-- add the @delete-task event to Tasks component -->
 <!-- the value of @delete-task is the same as the name used in $emit() in Task.vue -->
 <!-- if you get an emits events listeners warning in console, register emits object in Tasks.vue with the event being emitted(delete-task) -->
