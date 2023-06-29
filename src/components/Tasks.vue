@@ -1,5 +1,6 @@
 <template>
   <div :key="task.id" v-for="task in tasks">
+    <!-- second step in getting data from a level up -->
     <Task @delete-task="$emit('delete-task', task.id)" :task="task" />
   </div>
 </template>
@@ -16,6 +17,7 @@ export default {
   components: {
     Task,
   },
+  // if you get emits events listeners warning in console, emits object needs to be registered with the same name as above $emit()
   emits: ["delete-task"],
 };
 </script>

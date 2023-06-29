@@ -20,7 +20,8 @@ export default {
   },
   methods: {
     onDelete(id) {
-      //   console.log(id);
+      //  console.log(id);
+      // first step in getting data from a level up
       this.$emit("delete-task", id);
     },
   },
