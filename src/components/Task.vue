@@ -2,9 +2,13 @@
   <!-- v-bind(:) the class and you can do a ternary -->
   <!-- if task.reminder is true add reminder class, else add nothing -->
   <!-- still keep the default task class for styles -->
-  <div :class="[task.reminder ? 'reminder' : '', 'task']">
+  <div
+    @dblclick="$emit('toggle-reminder', task.id)"
+    :class="[task.reminder ? 'reminder' : '', 'task']"
+  >
     <h3>
-      {{ task.text }} <i @click="onDelete(task.id)" class="fas fa-times"></i>
+      {{ task.text }}
+      <i @click="$emit('delete-task', task.id)" class="fas fa-times"></i>
     </h3>
     <p>{{ task.day }}</p>
   </div>
@@ -14,16 +18,9 @@
 export default {
   // name used to import into Tasks.vue
   name: "Task",
-  // props value is pulled from v-for in Tasks.vue from array in App.vue
+  // props key is pulled from v-for in Tasks.vue from array in App.vue
   props: {
     task: Object,
-  },
-  methods: {
-    onDelete(id) {
-      //  console.log(id);
-      // first step in getting data from a level up
-      this.$emit("delete-task", id);
-    },
   },
 };
 </script>
@@ -64,9 +61,12 @@ export default {
 <!-- you now have access to each solo task -->
 <!-- add new component to Tasks.vue -->
 
-<!-- ADDED EMIT EVENT step 1, step 2 in Tasks.vue -->
+<!-- ADD EMIT EVENT step 1, step 2 in Tasks.vue -->
 <!-- add the @click event to fa icon element -->
-<!-- named onDelete(), pass it the task.id as a parameter -->
-<!-- define a methods object, add the onDelete() function, pass it the id parameter -->
-<!-- create a custom event in that function named 'delete-task' using this.$emit -->
+<!-- use $emit(), pass it any name you like(delete-task), along with the task.id as parameters -->
+<!-- we are emitting up a level in order to get the task's data -->
+
+<!-- TOGGLE REMINDER step 1 -->
+<!-- add the @dblClick event to the div container -->
+<!-- use $emit(), pass it any name you like(toggle-reminder), along with the task.id as parameters -->
 <!-- we are emitting up a level in order to get the task's data -->
