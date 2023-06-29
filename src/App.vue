@@ -77,7 +77,7 @@ export default {
 <!-- filter is a high order array for item removal -->
 <!-- where task.id does not equal the id being passed, remove that task -->
 
-<!-- TOGGLE REMINDER step 2 -->
+<!-- TOGGLE REMINDER step 3 -->
 <!-- we are toggling to change true to false or false to true -->
 <!-- add @toggle-reminder event with value toggleReminder to Tasks component -->
 <!-- define and add the toggleReminder() function to the methods object -->
