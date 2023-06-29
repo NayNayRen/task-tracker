@@ -2,6 +2,7 @@
   <div class="container">
     <!-- title prop from Header.vue -->
     <Header title="Task Tracker" />
+    <AddTask />
     <!-- tasks prop from Tasks.vue bound to tasks array -->
     <Tasks
       @toggle-reminder="toggleReminder"
@@ -14,12 +15,14 @@
 <script>
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
+import AddTask from "./components/AddTask";
 
 export default {
   name: "App",
   components: {
     Header,
     Tasks,
+    AddTask,
   },
   methods: {
     deleteTask(id) {
