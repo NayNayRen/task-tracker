@@ -2,15 +2,20 @@
   <form class="add-form">
     <div class="form-control">
       <label for="text">Task</label>
-      <input type="text" name="text" placeholder="Add a Task" />
+      <input type="text" v-model="text" name="text" placeholder="Add a Task" />
     </div>
     <div class="form-control">
       <label for="day">Day & Time</label>
-      <input type="text" name="day" placeholder="Add Day & Time" />
+      <input
+        type="text"
+        v-model="day"
+        name="day"
+        placeholder="Add Day & Time"
+      />
     </div>
     <div class="form-control form-control-check">
       <label for="reminder">Set Reminder</label>
-      <input type="checkbox" name="reminder" />
+      <input type="checkbox" v-model="reminder" name="reminder" />
     </div>
     <input type="submit" value="Save Task" class="btn btn-block" />
   </form>
@@ -19,6 +24,13 @@
 <script>
 export default {
   name: "AddTask",
+  data() {
+    return {
+      text: "",
+      day: "",
+      reminder: false,
+    };
+  },
 };
 </script>
 
