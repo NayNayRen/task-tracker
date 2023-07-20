@@ -1,8 +1,14 @@
 <template>
   <div class="container">
     <!-- title prop from Header.vue -->
-    <Header title="Task Tracker" />
-    <AddTask @add-task="addTask" />
+    <Header
+      @toggle-add-task="toggleAddTask()"
+      title="Task Tracker"
+      :showAddTask="showAddTask"
+    />
+    <div v-if="showAddTask">
+      <AddTask @add-task="addTask" />
+    </div>
     <!-- tasks prop from Tasks.vue bound to tasks array -->
     <Tasks
       @toggle-reminder="toggleReminder"
@@ -25,19 +31,22 @@ export default {
     AddTask,
   },
   methods: {
+    toggleAddTask() {
+      // on button click do the opposite of current state
+      // if show then hide, if hide then show
+      this.showAddTask = !this.showAddTask;
+    },
     addTask(task) {
       // spread across current tasks, and add the new one onto it
       this.tasks = [...this.tasks, task];
     },
     deleteTask(id) {
-      // console.log(id);
       // confirm is an alert box in Vue.js
       if (confirm("Are you sure?")) {
         this.tasks = this.tasks.filter((task) => task.id !== id);
       }
     },
     toggleReminder(id) {
-      // console.log(id);
       // reset and return the array of updated tasks
       // for each task, if task.id is equal to(===) the id passed then(?) spread acrossed the array(...) and change the reminder(:) to the opposite(!task.reminder) of the current reminder, else(:) dont change it
       this.tasks = this.tasks.map((task) =>
@@ -45,10 +54,11 @@ export default {
       );
     },
   },
-  // data function that returns an object
+  // data function that returns an object, default serttings for page load
   data() {
     return {
       tasks: [],
+      showAddTask: false,
     };
   },
   // created will run when the page loads
@@ -142,12 +152,12 @@ body {
 }
 
 .container {
-  max-width: 500px;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
-  border: 1px solid steelblue;
-  padding: 30px;
   border-radius: 5px;
+  border: 1px solid #000;
+  margin: 30px auto;
+  max-width: 500px;
+  min-height: 300px;
+  overflow: auto;
+  padding: 30px;
 }
 </style>

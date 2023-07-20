@@ -3,7 +3,12 @@
     <!-- prop from below -->
     <h1>{{ title }}</h1>
     <!-- text and color props from Button.vue -->
-    <Button text="Add Task" color="green" />
+    <!-- text and color are v bound to say if showAddTask is true(?) then say Close and be red, else(:) say Add Task and be green -->
+    <Button
+      @btn-click="$emit('toggle-add-task')"
+      :text="showAddTask ? 'Close' : 'Add Task'"
+      :color="showAddTask ? 'red' : 'green'"
+    />
   </header>
 </template>
 
@@ -16,6 +21,7 @@ export default {
   // props value is set in App.vue
   props: {
     title: String,
+    showAddTask: Boolean,
   },
   components: {
     Button,
