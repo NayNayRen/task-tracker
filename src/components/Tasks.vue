@@ -1,5 +1,5 @@
 <template>
-  <div :key="task.id" v-for="task in tasks">
+  <div v-for="task in tasks" :key="task.id">
     <!-- second step in getting data from a level up -->
     <Task
       @toggle-reminder="$emit('toggle-reminder', task.id)"

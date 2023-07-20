@@ -34,6 +34,8 @@ export default {
     },
     toggleReminder(id) {
       // console.log(id);
+      // reset and return the array of updated tasks
+      // for each task, if task.id is equal to(===) the id passed then(?) spread acrossed the array(...) and change the reminder(:) to the opposite(!task.reminder) of the current reminder, else(:) dont change it
       this.tasks = this.tasks.map((task) =>
         task.id === id ? { ...task, reminder: !task.reminder } : task
       );
