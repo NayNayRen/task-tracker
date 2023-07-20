@@ -2,7 +2,7 @@
   <div class="container">
     <!-- title prop from Header.vue -->
     <Header title="Task Tracker" />
-    <AddTask />
+    <AddTask @add-task="addTask" />
     <!-- tasks prop from Tasks.vue bound to tasks array -->
     <Tasks
       @toggle-reminder="toggleReminder"
@@ -25,6 +25,10 @@ export default {
     AddTask,
   },
   methods: {
+    addTask(task) {
+      // spread across current tasks, and add the new one onto it
+      this.tasks = [...this.tasks, task];
+    },
     deleteTask(id) {
       // console.log(id);
       // confirm is an alert box in Vue.js

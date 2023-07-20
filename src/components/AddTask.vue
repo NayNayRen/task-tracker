@@ -1,7 +1,8 @@
 <template>
-  <form class="add-form">
+  <form @submit="onSubmit" class="add-form">
     <div class="form-control">
       <label for="text">Task</label>
+      <!-- v-model binds the data to the element -->
       <input type="text" v-model="text" name="text" placeholder="Add a Task" />
     </div>
     <div class="form-control">
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+// set default values for page load
 export default {
   name: "AddTask",
   data() {
@@ -30,6 +32,30 @@ export default {
       day: "",
       reminder: false,
     };
+  },
+  methods: {
+    // prevents the form submission
+    onSubmit(e) {
+      e.preventDefault();
+      // if text is empty
+      if (!this.text) {
+        alert("Please add a task.");
+        return;
+      }
+      // creates a new task
+      const newTask = {
+        id: Math.floor(Math.random() * 10000),
+        text: this.text,
+        day: this.day,
+        reminder: this.reminder,
+      };
+      // console.log(newTask);
+      // emits the new data up a level to App.vue
+      this.$emit("add-task", newTask);
+      // resets values when done
+      (this.text = ""), (this.day = ",");
+      this.reminder = false;
+    },
   },
 };
 </script>
