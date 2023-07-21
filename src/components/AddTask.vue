@@ -53,7 +53,7 @@ export default {
       // emits the new data up a level to App.vue
       this.$emit("add-task", newTask);
       // resets values when done
-      (this.text = ""), (this.day = ",");
+      (this.text = ""), (this.day = "");
       this.reminder = false;
     },
   },
