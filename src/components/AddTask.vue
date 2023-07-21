@@ -2,7 +2,7 @@
   <form @submit="onSubmit" class="add-form">
     <div class="form-control">
       <label for="text">Task</label>
-      <!-- v-model binds the data to the element -->
+      <!-- v-model binds the data to the element for use with the this keyword -->
       <input type="text" v-model="text" name="text" placeholder="Add a Task" />
     </div>
     <div class="form-control">
