@@ -1,4 +1,7 @@
-# task-tracker
+# About Task Tracker
+
+This is my first attempt at building with Vue.js. Figured it's about time to get into a frontend framework. It's somewhat of a to do list, with CRUD capabilities
+and double clicking to set a highlight as a reminder.
 
 ## Project setup
 ```
