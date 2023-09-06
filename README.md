@@ -1,6 +1,6 @@
 ## About Task Tracker
 
-This is my first dive into <a href="https://vuejs.org/guide/quick-start.html">Vue.js</a>. I followed along a intro tutorial done by Brad Traversy of <a href="https://www.traversymedia.com/">Traversy Media</a>. I've followed and gotten into a few of his guides to use as stepping stones.
+This is my first dive into <a href="https://vuejs.org/guide/quick-start.html">Vue.js</a>. I followed along an intro tutorial done by Brad Traversy of <a href="https://www.traversymedia.com/">Traversy Media</a>. I've followed and gotten into a few of his guides to use as stepping stones.
 
 A to do list of sorts. You can:
 
