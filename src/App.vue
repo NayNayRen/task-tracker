@@ -53,6 +53,11 @@ export default {
         task.id === id ? { ...task, reminder: !task.reminder } : task
       );
     },
+    async fetchTasks() {
+      const response = await fetch("http://localhost:5000/tasks");
+      const data = await response.json();
+      return data;
+    },
   },
   // data function that returns an object, default serttings for page load
   data() {
@@ -64,27 +69,8 @@ export default {
   // created will run when the page loads
   // this.tasks hooks into task array above, a lifecycle for page load
   // usually reserved for api and http requests
-  created() {
-    this.tasks = [
-      {
-        id: 1,
-        text: "Doctor Appointment",
-        day: "March 1st at 2:30pm",
-        reminder: true,
-      },
-      {
-        id: 2,
-        text: "Meeting at school",
-        day: "July 10th 12:30pm",
-        reminder: true,
-      },
-      {
-        id: 3,
-        text: "Get groceries",
-        day: "Sunday at 11am",
-        reminder: false,
-      },
-    ];
+  async created() {
+    this.tasks = await this.fetchTasks();
   },
 };
 </script>
