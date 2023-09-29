@@ -36,9 +36,17 @@ export default {
       // if show then hide, if hide then show
       this.showAddTask = !this.showAddTask;
     },
-    addTask(task) {
+    async addTask(task) {
+      const response = await fetch("api/tasks", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(task),
+      });
+      const data = await response.json();
       // spread across current tasks, and add the new one onto it
-      this.tasks = [...this.tasks, task];
+      this.tasks = [...this.tasks, data];
     },
     deleteTask(id) {
       // confirm is an alert box in Vue.js
@@ -53,8 +61,15 @@ export default {
         task.id === id ? { ...task, reminder: !task.reminder } : task
       );
     },
+    // gets all tasks
     async fetchTasks() {
-      const response = await fetch("http://localhost:5000/tasks");
+      const response = await fetch("api/tasks");
+      const data = await response.json();
+      return data;
+    },
+    // gets single task
+    async fetchTask(id) {
+      const response = await fetch(`api/tasks/${id}`);
       const data = await response.json();
       return data;
     },
