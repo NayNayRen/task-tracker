@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Button from "./Button.vue";
+import Button from "./Button";
 
 export default {
   // name used to import into App.vue
