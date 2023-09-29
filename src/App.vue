@@ -59,11 +59,21 @@ export default {
           : alert("Error deleting your task.");
       }
     },
-    toggleReminder(id) {
+    async toggleReminder(id) {
+      const taskToToggle = await this.fetchTask(id);
+      const updatedTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
+      const response = await fetch(`api/tasks/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(updatedTask),
+      });
+      const data = await response.json();
       // reset and return the array of updated tasks
       // for each task, if task.id is equal to(===) the id passed then(?) spread acrossed the array(...) and change the reminder(:) to the opposite(!task.reminder) of the current reminder, else(:) dont change it
       this.tasks = this.tasks.map((task) =>
-        task.id === id ? { ...task, reminder: !task.reminder } : task
+        task.id === id ? { ...task, reminder: data.reminder } : task
       );
     },
     // gets all tasks
