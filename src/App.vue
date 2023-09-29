@@ -48,10 +48,15 @@ export default {
       // spread across current tasks, and add the new one onto it
       this.tasks = [...this.tasks, data];
     },
-    deleteTask(id) {
+    async deleteTask(id) {
       // confirm is an alert box in Vue.js
       if (confirm("Are you sure?")) {
-        this.tasks = this.tasks.filter((task) => task.id !== id);
+        const response = await fetch(`api/tasks/${id}`, {
+          method: "DELETE",
+        });
+        response.status === 200
+          ? (this.tasks = this.tasks.filter((task) => task.id !== id))
+          : alert("Error deleting your task.");
       }
     },
     toggleReminder(id) {

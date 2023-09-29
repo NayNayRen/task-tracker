@@ -17,12 +17,6 @@
       "text": "Get groceries",
       "day": "Sunday at 11am",
       "reminder": false
-    },
-    {
-      "id": 7206,
-      "text": "Dentist appointment",
-      "day": "February 20th 1:30pm",
-      "reminder": true
     }
   ]
 }
