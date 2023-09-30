@@ -148,7 +148,7 @@ body {
   display: inline-block;
   font-family: inherit;
   font-size: 15px;
-  margin: 5px;
+  margin: 5px 0;
   padding: 10px 20px;
   text-decoration: none;
 }
