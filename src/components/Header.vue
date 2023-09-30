@@ -5,6 +5,7 @@
     <!-- text and color props from Button.vue -->
     <!-- text and color are v bound to say if showAddTask is true(?) then say Close and be red, else(:) say Add Task and be green -->
     <Button
+      v-show="homePage"
       @btn-click="$emit('toggle-add-task')"
       :text="showAddTask ? 'Close' : 'Add Task'"
       :color="showAddTask ? 'red' : 'green'"
@@ -25,6 +26,15 @@ export default {
   },
   components: {
     Button,
+  },
+  computed: {
+    homePage() {
+      if (this.$route.path === "/") {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
 };
 </script>
